@@ -21,14 +21,14 @@ namespace Kontur.Courses.Git
 		}
 
 		[Test]
-		public void OneArg()
+		public void OneArg_GoodInput()
 		{
 			Assert.AreEqual(42, Calc("42").Value);
 			Assert.AreEqual(43, Calc("43").Value);
 		}
 
 		[Test]
-		public void ZeroArg()
+		public void ZeroArg_GoodInput()
 		{
 			Assert.AreEqual(42, Calc("42").Value);
 			Assert.AreEqual(42, Calc("").Value);
@@ -36,7 +36,7 @@ namespace Kontur.Courses.Git
 		}
 
 		[Test]
-		public void ThreeArg()
+		public void ThreeArg_GoodInput()
 		{
 			Assert.AreEqual(55, Calc("42 + 13").Value);
 			Assert.AreEqual(1, Calc("2 - 1").Value);
@@ -47,7 +47,7 @@ namespace Kontur.Courses.Git
 		[TestCase("45-67", ExpectedResult = new[] { "45", "-", "67" })]
 		[TestCase("8 - 9", ExpectedResult = new[] { "8", "-", "9" })]
 		[TestCase("01 -    234", ExpectedResult = new[] { "01", "-", "234" })]
-		public string[] SplitInput(string input)
+		public string[] SplitInput_GoodInput(string input)
 		{
 			return Calculator.SplitInput(input);
 		}
